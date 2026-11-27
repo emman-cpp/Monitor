@@ -357,7 +357,7 @@ function updateDateTime() {
     if (clock) {
         clock.textContent = now.toLocaleTimeString('en-PH', {
             hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true
-        });
+        }).toLowerCase();
     }
     if (date) {
         date.textContent = now.toLocaleDateString('en-PH', {
