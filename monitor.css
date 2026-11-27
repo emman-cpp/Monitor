@@ -1,16 +1,16 @@
 @font-face {
     font-family: 'URWClassico';
-    src: url('./fonts/URWClassico-Regular.ttf') format('truetype');
+    src: url('./Fonts/URWClassico-Regular.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Playfair Display';
-    src: url('./fonts/PlayfairDisplay-BoldItalic.ttf') format('truetype');
+    src: url('./Fonts/PlayfairDisplay-BoldItalic.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Century Gothic';
-    src: url('./fonts/CenturyGothicPaneuropeanRegular.ttf') format('truetype');
+    src: url('./Fonts/CenturyGothicPaneuropeanRegular.ttf') format('truetype');
 }
 
 * {
