@@ -730,16 +730,16 @@ document.addEventListener('visibilitychange', () => {
 
 /* ---------------------------
    12. HOMEPAGE VIDEO PLAYLIST
-   Add or rename MP4 files in the Videos folder and update this list.
+   Add or rename MP4 files in the  folder and update this list.
 ---------------------------- */
 const homepageVideo = document.getElementById('homepageVideo');
-const homepageVideoSource = document.getElementById('homepageVideoSource');
+const homepageource = document.getElementById('homepageource');
 const homepageVideoTitle = document.getElementById('homepageVideoTitle');
 const videoMuteToggle = document.getElementById('videoMuteToggle');
 const videoLoopToggle = document.getElementById('videoLoopToggle');
 const videoPlaylist = document.getElementById('videoPlaylist');
 
-const homepageVideos = [
+const homepage = [
     { title: 'RCAM Introduction', src: 'Videos/LANDSCAPE.mp4' },
     { title: 'RCAM History', src: 'Videos/rcam-history.mp4' },
     { title: 'RCAM Services', src: 'Videos/rcam-services.mp4' }
