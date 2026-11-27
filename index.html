@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Lobby Welcome Screen</title>
+
+        <!-- External CSS -->
+        <link rel="stylesheet" href="monitor.css">
+
+        <!-- External JavaScript -->
+        <script src="script.js" defer></script>
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <!-- TOP 50% SLIDESHOW -->
+            <section class="slideshow">
+
+                <!-- Company Images -->
+                <img class="slide active"
+                    src="Images/Slide1.PNG"
+                    alt="Company office">
+
+                <img class="slide"
+                    src="Images/Slide2.PNG"
+                    alt="Office interior">
+
+                <img class="slide"
+                    src="Images/Slide3.PNG"
+                    alt="Corporate workspace">
+                
+                <img class="slide"
+                    src="Images/Slide4.PNG"
+                    alt="Company facilities">
+                
+                <img class="slide"
+                    src="Images/Slide5.PNG"
+                    alt="Company facilities">
+
+                <!-- Slide Indicators -->
+                <!--<div class="indicators" id="indicators">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>-->
+
+            </section>
+
+            <!-- COMPANY WELCOME SECTION -->
+            <section class="welcome-section">
+
+                <!-- HOMEPAGE VIDEO PLAYER: place MP4 files in the Videos folder -->
+                <section class="homepage-video" aria-label="RCAM video presentation">
+                    <div class="video-player-frame">
+                        <video id="homepageVideo" autoplay muted loop playsinline controls preload="metadata"
+                               aria-label="RCAM presentation video">
+                            <source id="homepageVideoSource" src="Videos/LANDSCAPE.mp4" type="video/mp4">
+                            Your browser does not support HTML5 video.
+                        </video>
+                    </div>
+                </section>
+
+                <p class="welcome-label">
+                    TAP THE ICON TO START
+                </p>
+
+                <h1 class="company-name">
+                    <img
+                        src="Images/informal.png"
+                        alt="RCAM Logo"
+                        class="story-image"
+                    >
+                </h1>
+
+                <p class="company-tagline">
+                    Forming Disciples. Building Communities. Serving the Mission.<br>
+                </p>
+
+                <!-- DATE AND TIME -->
+                <div class="datetime">
+                    <div id="clock">00:00:00</div>
+                    <div id="date">Loading date...</div>
+                </div>
+
+            </section>
+
+            <!-- COMPANY INFORMATION MODAL -->
+            <div class="modal-overlay" id="companyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+
+                <div class="modal-content" tabindex="-1">
+
+                    <!-- CLOSE BUTTON -->
+                    <button class="modal-close"
+                            id="closeModal"
+                            aria-label="Close modal">
+                        &times;
+                    </button>
+
+                    <!-- MODAL HEADER -->
+                    <div class="modal-header">
+                        <p class="modal-label">WELCOME TO
+                            <img
+                                src="Images/informal.png"
+                                alt="RCAM Historical Photograph"
+                                class="story-image"
+                            >
+                        </p>
+
+                        <h2 id="modalTitle">
+                            Roman Catholic<br>
+                            Archbishop of Manila
+                        </h2>
+                    </div>
+
+                    <!-- NAVIGATION TABS -->
+                    <div class="modal-tabs" role="tablist" aria-label="RCAM information sections">
+
+                        <button class="modal-tab active"
+                                id="aboutTab" data-tab="about" role="tab" aria-controls="about" aria-selected="true" tabindex="0">
+                            ABOUT US
+                        </button>
+
+                        <button class="modal-tab"
+                                id="storyTab" data-tab="story" role="tab" aria-controls="story" aria-selected="false" tabindex="-1">
+                            OUR STORY
+                        </button>
+
+                        <button class="modal-tab"
+                                id="mapTab" data-tab="map" role="tab" aria-controls="map" aria-selected="false" tabindex="-1">
+                            INDOOR MAP
+                        </button>
+
+                    </div>
+
+                    <!-- ======================
+                        ABOUT THE COMPANY
+                    ======================= -->
+                    <section class="modal-panel active"
+                            id="about" role="tabpanel" aria-labelledby="aboutTab">
+
+                        <div class="modal-divider"></div>
+
+                        <h3>The Philippines' Mother Diocese</h3>
+
+
+                        <p class="modal-description">
+                            The Archdiocese of Manila, established in 1579, is one of the oldest and most significant ecclesiastical territories in the Philippines. Throughout its rich history, the Archdiocese of Manila has served as a center of faith, evangelization, and Christian service, guided by generations of bishops and archbishops. Today, it continues its mission of proclaiming the Gospel and serving the Catholic faithful across the six cities of Manila, Makati, Mandaluyong, Pasay, San Juan, and a portion of Taguig City.
+                        </p>
+
+                        <div class="modal-info">
+
+                            <div class="info-card">
+                                <h3>OUR MISSION</h3>
+                                <p>
+                                    A people called by the Father 
+                                    in Jesus Christ to become 
+                                    a community of persons 
+                                    with Fullness of Life, 
+                                    witnessing to the Kingdom of God 
+                                    by Living the Paschal Mystery 
+                                    in the Power of the Holy Spirit, 
+                                    with Mary and Joseph as our Companions.
+                                </p>
+                            </div>
+
+                            <div class="info-card">
+                                <h3>OUR VISION</h3>
+                                <p>
+                                    By 2028, RCAM shall have raised 
+                                    the level of integral faith formation, 
+                                    the promotion of holistic human development, 
+                                    and the stewardship of the Archdiocese 
+                                    and its ecclesial communities 
+                                    to best pastoral practice in the Philippine Church.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="modal-divider"></div>
+
+                        <p class="modal-description">
+                            His Eminence Jose Cardinal F. Advincula <br>
+                            33ʳᵈ Archbishop of Manila
+                        </p>
+
+                    </section>
+
+                    <!-- ======================
+                        COMPANY STORY
+                    ======================= -->
+                    <section class="modal-panel"
+                            id="story" role="tabpanel" aria-labelledby="storyTab" hidden>
+
+                        <div class="modal-divider"></div>
+
+                        <h3>OUR STORY</h3>
+
+                        <p class="modal-description">
+                            Discover the history and journey of the
+                            Roman Catholic Archbishop of Manila.
+                            <br>
+                            Organization's history, important
+                            milestones, significant events, and
+                            contributions to the community here.
+                        </p>
+
+                        <div class="story-card">
+
+                            <h3>OUR HISTORY</h3>
+
+                            <p>
+                            The Archdiocese of Manila was established on February 6, 1579, by Pope Gregory XIII, with Fray Domingo de Salazar, OP, as its first bishop. Initially a suffragan diocese under the Archdiocese of Mexico, it was elevated to an archdiocese on August 14, 1595, with three suffragan dioceses: Nueva Cáceres, Nueva Segovia, and Cebu.
+
+                            Under Bishop Salazar, the First Synod of Manila promoted catechism in native languages and recognized the rights of both Christian and non-Christian Filipinos. Throughout its history, the Archdiocese was led by members of various religious congregations and secular clergy. Notable leaders included Archbishop Basilio Sancho, who promoted the formation of native Filipino priests.
+
+                            The Archdiocese experienced significant milestones during the 20th century, including the appointment of Jeremiah Harty as its first non-Spanish archbishop in 1903 and Gabriel M. Reyes as its first Filipino archbishop in 1949. In 1960, Rufino J. Santos became the first Filipino Cardinal Archbishop of Manila. He was followed by Jaime Cardinal Sin, Gaudencio Cardinal Rosales, and Luis Antonio Cardinal Tagle.
+
+                            In 2021, Pope Francis appointed Jose F. Cardinal Advincula as the 33rd Archbishop of Manila, and he was officially installed on June 24, 2021.
+
+                            For more than four centuries, the Archdiocese of Manila has played an important role in the development of Catholicism in the Philippines through missionary work, evangelization, priestly formation, pastoral leadership, and service to the spiritual and social needs of the Filipino faithful.
+                            </p>
+
+                        </div>
+
+                        <div class="story-card">
+
+                            <h3>OUR LEGACY</h3>
+
+                            <p>
+                               Legacy, commitment to faith, service, and community.
+                            </p>
+
+                        </div>
+
+                    </section>
+
+
+                    
+                    <!-- INDOOR MAP -->
+                    <section class="modal-panel" id="map" role="tabpanel" aria-labelledby="mapTab" hidden>
+
+                        <div class="modal-divider"></div>
+
+                        <h3>INDOOR NAVIGATION MAP</h3>
+
+                        <p class="modal-description">
+                            Select a floor, then choose an office or facility. Its direction map will appear here automatically.
+                        </p>
+
+                        <!-- SELECTED OFFICE VIEW: shown immediately after an office is selected -->
+                        <!-- LOCATION DETAILS -->
+                        <div class="map-details" id="mapDetails" hidden>
+
+                            <h3 id="locationName">
+                                SELECT A LOCATION
+                            </h3>
+
+                            <p id="locationDescription">
+                                Choose an office or facility from the selected floor.
+                            </p>
+
+                            <img id="officeDirectionImage" class="office-direction-image" alt="Direction map for the selected RCAM office or facility" loading="eager" decoding="async" hidden>
+                            <p id="officeImagePlaceholder" class="map-image-placeholder" hidden>
+                                The direction image for this office has not been added yet. Please check back when the indoor map is completed.
+                            </p>
+                            <button id="backToFloorPlan" class="map-back-button" type="button" hidden>BACK TO FLOOR PLAN</button>
+
+                        </div>
+
+
+                        <!-- FLOOR SELECTION -->
+                        <div class="floor-tabs">
+
+                            <button class="floor-tab active" data-floor="ground">
+                                GROUND FLOOR
+                            </button>
+
+                            <button class="floor-tab" data-floor="second">
+                                2ND FLOOR
+                            </button>
+
+                            <button class="floor-tab" data-floor="third">
+                                3RD FLOOR
+                            </button>
+
+                            <button class="floor-tab" data-floor="fourth">
+                                4TH FLOOR
+                            </button>
+
+                        </div>
+
+                        <!-- GROUND FLOOR -->
+                        <div class="floor-map active" id="ground">
+
+                            <h3>GROUND FLOOR</h3>
+
+                            <div class="floor-plan-frame">
+                                <img class="general-floor-plan" src="Images/general/floors/ground.png" alt="Ground Floor general floor plan" loading="lazy" decoding="async" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+                                <p class="map-image-placeholder" hidden>General floor plan for this floor is still being prepared.</p>
+                            </div>
+
+                            <p class="office-picker-label">SELECT AN OFFICE OR FACILITY BELOW</p>
+
+                            <div class="map-grid" role="group" aria-label="Schematic room selector">
+
+                                <button class="map-room" data-location="Chancery">
+                                    Chancery
+                                </button>
+
+                                <button class="map-room" data-location="OWSD">
+                                    Office for Work Systems and Development
+                                </button>
+
+                                <button class="map-room" data-location="OSM">
+                                    Office for Strategic Management
+                                </button>
+
+                                <button class="map-room" data-location="Cafeteria">
+                                    Canteen
+                                </button>
+
+                                <button class="map-room" data-location="Engineering">
+                                    Engineering Department
+                                </button>
+
+                                <button class="map-room" data-location="Chapel">
+                                    RCAM Chapel
+                                </button>
+
+                                <button class="map-room" data-location="Common Restroom">
+                                    Restrooms
+                                </button>
+
+                                <button class="map-room" data-location="EWF">
+                                    Employees' Welfare Fund
+                                </button>
+
+                                <button class="map-room" data-location="Temporary">
+                                    Temporary Office Space
+                                </button>
+
+                                <button class="map-room" data-location="Stairs">
+                                    Stairs
+                                </button>
+
+                                <button class="map-room" data-location="Elevator">
+                                    Elevator
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- SECOND FLOOR -->
+                        <div class="floor-map" id="second" hidden>
+
+                            <h3>SECOND FLOOR</h3>
+
+                            <div class="floor-plan-frame">
+                                <img class="general-floor-plan" src="Images/general/floors/second.png" alt="Second Floor general floor plan" loading="lazy" decoding="async" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+                                <p class="map-image-placeholder" hidden>General floor plan for this floor is still being prepared.</p>
+                            </div>
+
+                            <p class="office-picker-label">SELECT AN OFFICE OR FACILITY BELOW</p>
+
+                            <div class="map-grid" role="group" aria-label="Schematic room selector">
+
+                                <button class="map-room" data-location="Audit">
+                                    Auditing Department
+                                </button>
+
+                                <button class="map-room" data-location="ALC">
+                                    Commission on Divine Worship
+                                </button>
+
+                                <button class="map-room" data-location="IT">
+                                    Information Technology Department
+                                </button>
+
+                                <button class="map-room" data-location="PAD">
+                                    Properties Administration Department 
+                                </button>
+
+                                <button class="map-room" data-location="TAD">
+                                    Treasury and Accounting Department
+                                </button>
+
+                                <button class="map-room" data-location="Conference Rooms">
+                                    Archbishop Gabriel Reyes Conference Room
+                                </button>
+
+                                <button class="map-room" data-location="Legal">
+                                    Legal Department
+                                </button>
+
+                                <button class="map-room" data-location="Cultural">
+                                    Cultural Heritage
+                                </button>
+
+                                <button class="map-room" data-location="OPNE">
+                                    Office for the Promotion of the New Evangelization
+                                </button>
+
+                                <button class="map-room" data-location="Stairs">
+                                    Stairs
+                                </button>
+
+                                <button class="map-room" data-location="Elevator">
+                                    Elevator
+                                </button>
+
+                                <button class="map-room" data-location="second-restroom">
+                                    Restrooms
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <!-- THIRD FLOOR -->
+                        <div class="floor-map" id="third" hidden>
+
+                            <h3>THIRD FLOOR</h3>
+
+                            <div class="floor-plan-frame">
+                                <img class="general-floor-plan" src="Images/general/floors/third.png" alt="Third Floor general floor plan" loading="lazy" decoding="async" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+                                <p class="map-image-placeholder" hidden>General floor plan for this floor is still being prepared.</p>
+                            </div>
+
+                            <p class="office-picker-label">SELECT AN OFFICE OR FACILITY BELOW</p>
+
+                            <div class="map-grid" role="group" aria-label="Schematic room selector">
+
+                                <button class="map-room" data-location="MC">
+                                    Office of the Vicar General and Moderator Curiae
+                                </button>
+
+                                <button class="map-room" data-location="HR">
+                                    Human Resource Development Department
+                                </button>
+
+                                <button class="map-room" data-location="MC Conference">
+                                    MC Conference Room
+                                </button>
+
+                                <button class="map-room" data-location="Museum">
+                                    Museo ng Arkidiyosesis ng Maynila
+                                </button>
+
+                                <button class="map-room" data-location="Archives">
+                                    Manila Archdiocesan Archives
+                                </button>
+
+                                <button class="map-room" data-location="Tribunal">
+                                    Metropolitan Tribunal
+                                </button>
+
+                                <button class="map-room" data-location="AOC">
+                                    Archdiocesan Office of Communications
+                                </button>
+
+                                <button class="map-room" data-location="Stairs">
+                                    Stairs
+                                </button>
+
+                                <button class="map-room" data-location="Elevator">
+                                    Elevator
+                                </button>
+
+                                <button class="map-room" data-location="third-restroom">
+                                    Restrooms
+                                </button>
+
+                            </div>
+
+                        </div>
+                        <!-- Fourth FLOOR -->
+                        <div class="floor-map" id="fourth" hidden>
+
+                            <h3>FOURTH FLOOR</h3>
+
+                            <div class="floor-plan-frame">
+                                <img class="general-floor-plan" src="Images/general/floors/fourth.png" alt="Fourth Floor general floor plan" loading="lazy" decoding="async" onerror="this.hidden=true; this.nextElementSibling.hidden=false;">
+                                <p class="map-image-placeholder" hidden>General floor plan for this floor is still being prepared.</p>
+                            </div>
+
+                            <p class="office-picker-label">SELECT AN OFFICE OR FACILITY BELOW</p>
+
+                            <div class="map-grid" role="group" aria-label="Schematic room selector">
+
+                                <button class="map-room" data-location="Bishop">
+                                    Bishop Domingo de Salazar, OP Hall
+                                </button>
+
+                                <button class="map-room" data-location="Cardi">
+                                    Cardinal Rufino Santos Hall (Boardroom 1)
+                                </button>
+
+                                <button class="map-room" data-location="Arch">
+                                    Archbishop Michael O'Doherty Hall (Boardroom 2)
+                                </button>
+
+                                <button class="map-room" data-location="Fourth Lobby">
+                                    Fourth Floor Lobby
+                                </button>
+
+                                <!--<button class="map-room" data-location="Stairs">
+                                    Stairs
+                                </button>
+
+                                <button class="map-room" data-location="Elevator">
+                                    Elevator
+                                </button>-->
+
+                                <button class="map-room" data-location="fourth-restroom">
+                                    Restrooms
+                                </button>
+
+                            </div>
+                        </div>
+
+
+                    </section>
+
+                    <!-- MODAL FOOTER -->
+                    <div class="modal-divider"></div>
+
+                    <div class="modal-footer">
+                        ROMAN CATHOLIC ARCHBISHOP OF MANILA
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <!-- ==========================
+                LOOPING NEWS TICKER
+            ========================== -->
+            <!--
+            <div class="news-ticker">
+
+                <div class="ticker-label">
+                    <span class="ticker-icon">✚</span>
+                    RCAM
+                </div>
+
+                <div class="ticker-container">
+
+                    <div class="ticker-track">
+
+                        <div class="ticker-content">
+
+                            <span>WELCOME TO THE ROMAN CATHOLIC ARCHBISHOP OF MANILA</span>
+
+                            <span class="ticker-separator">✚</span>
+
+                            <span>STAY UPDATED WITH THE LATEST RCAM ANNOUNCEMENTS</span>
+
+                            <span class="ticker-separator">✚</span>
+
+                            <span>ALWAYS LIVE A LIFE LIKE JESUS OUR CHRIST</span>
+
+                            <span class="ticker-separator">✚</span>
+
+                            <span>FAITH • SERVICE • COMMUNITY</span>
+
+                            <span class="ticker-separator">✚</span>
+
+                        </div>
+
+                         DUPLICATE CONTENT FOR SEAMLESS LOOP 
+
+                        <div class="ticker-content" aria-hidden="true">
+
+                            <span>WELCOME TO THE ROMAN CATHOLIC ARCHBISHOP OF MANILA</span>
+
+                            <span class="ticker-separator">✦</span>
+
+                            <span>STAY UPDATED WITH THE LATEST RCAM ANNOUNCEMENTS</span>
+
+                            <span class="ticker-separator">✦</span>
+
+                            <span>ALWAYS LIVE A LIFE LIKE JESUS OUR CHRIST</span>
+
+                            <span class="ticker-separator">✦</span>
+
+                            <span>FAITH • SERVICE • COMMUNITY</span>
+
+                            <span class="ticker-separator">✦</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div> -->
+
+            <!-- FOOTER -->
+            <footer>
+                &nbsp; RCAM CURIA LOBBY MONITOR
+                &nbsp; | &nbsp; INFORMATION AND INDOOR NAVIGATION
+                &nbsp; | &nbsp; © CLIFFORD H. MC OFFICE
+            </footer>
+
+        </div>
+    </body>
+</html>
